@@ -20,7 +20,7 @@ use setup::{PackCommand, PolicyCommand, PolicyTypeCommand, RunnerCommand, Servic
 use structopt::StructOpt;
 
 #[derive(StructOpt, Debug)]
-#[structopt(name = "synapse-flow", about = "CLI for SynapseFlow API.")]
+#[structopt(name = "synapse", about = "CLI for Synapse.")]
 pub struct CLI {
     #[structopt(subcommand)]
     pub command: Command,
@@ -41,7 +41,7 @@ pub enum Command {
         about = "Authenticate user, acquire access token, and update CLI config directory"
     )]
     Login(LoginCommand),
-    #[structopt(about = "Display the currently authenticated user")]
+    #[structopt(name = "whoami", about = "Display the currently authenticated user")]
     WhoAmI(WhoAmICommand),
     #[structopt(about = "API Keys.")]
     ApiKey(ApiKeyCommand),
